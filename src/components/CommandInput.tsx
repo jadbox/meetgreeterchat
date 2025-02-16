@@ -1,12 +1,12 @@
-import React, { useState, KeyboardEvent } from 'react';
-import type { Command } from '../types/game';
+import React, { useState, KeyboardEvent } from "react";
+import type { Command } from "../types/game";
 
 interface CommandInputProps {
   onCommand: (command: Command) => void;
 }
 
 export function CommandInput({ onCommand }: CommandInputProps) {
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -17,11 +17,11 @@ export function CommandInput({ onCommand }: CommandInputProps) {
     const args = parts.slice(1);
 
     onCommand({ command, args });
-    setInput('');
+    setInput("");
   };
 
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       handleSubmit(e);
     }
   };
@@ -34,7 +34,7 @@ export function CommandInput({ onCommand }: CommandInputProps) {
         onChange={(e) => setInput(e.target.value)}
         onKeyDown={handleKeyDown}
         className="w-full bg-gray-800 text-green-400 font-mono p-2 rounded-lg border border-gray-700 focus:border-green-500 focus:ring-1 focus:ring-green-500 outline-none"
-        placeholder="Enter command..."
+        placeholder="Post message..."
         spellCheck={false}
         autoComplete="off"
       />
