@@ -1,10 +1,10 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import { App } from './App';
-import './index.css';
+import { hydrateRoot } from "react-dom/client";
+import { App } from "./App";
+import { GameStateProvider } from "./hooks/useGameState";
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
+hydrateRoot(
+  document.getElementById("root")!,
+  <GameStateProvider>
     <App />
-  </StrictMode>
+  </GameStateProvider>
 );
