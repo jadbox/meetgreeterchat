@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { App } from '../components/App';
+---
+
+<Layout title="MUD Social Simulator">
+  <main>
+    <header class="py-4 mb-4 text-center">
+      <h1 class="text-2xl font-bold text-green-400">MASH 4077 Medical Simulator</h1>
+      <p class="text-gray-400">Save lives on the frontline</p>
+    </header>
+    
+    <App client:load />
+    
+    <footer class="mt-8 text-center text-gray-500 text-sm p-4">
+      <p>Built with Astro + React</p>
+    </footer>
+  </main>
+</Layout>
